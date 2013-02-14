@@ -13,15 +13,18 @@ set hlsearch
 call pathogen#infect()
 filetype plugin on
 filetype plugin indent on
-autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
-autocmd FileType python setl autoindent
-autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType ruby   setl autoindent
-autocmd FileType ruby   setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType html.eruby   setl autoindent
-autocmd FileType html.eruby   setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd BufNewFile,BufRead *.json set ft=javascript
+augroup setup-ft
+    autocmd!
+    autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
+    autocmd FileType python setl autoindent
+    autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+    autocmd FileType python setl expandtab tabstop=4 shiftwidth=4 softtabstop=4
+    autocmd FileType ruby   setl autoindent
+    autocmd FileType ruby   setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType html.eruby   setl autoindent
+    autocmd FileType html.eruby   setl expandtab tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufNewFile,BufRead *.json set ft=javascript
+augroup END
 
 imap jj <ESC>
 
